@@ -73,6 +73,20 @@ int * dodatnie_liczby(int var_num) {
         return  addresses[1];
     }
 }
+
+int fibbonacci(int index_given) {
+    int first = 0;
+    int second = 1;
+    int third = 0;
+    for (int i=2; i <= index_given; i++) {
+        // 0 1 1 2 3 5 8
+        third = first + second;
+        first = second; 
+        second = third; 
+    }
+    return third;
+}
+
 // 1. Napisz program wczytujący ze standardowego wejścia
 // dwie dodatnie liczby całkowite n i m, i wypisujący w
 // kolejnych wierszach na standardowym wyjściu wszystkie
@@ -99,10 +113,8 @@ void zad2() {
         }
 }
 
-
 // 3. Napisz program wczytujący ze standardowego wejścia trzy dodatnie liczby całkowite n, m i k, i wypisujący w
 // kolejnych wierszach wszystkie wielokrotności n większe od m i mniejsze od k.
-
 void zad3() {
     dodatnie_liczby(3);
     int n = *addresses[0];
@@ -115,6 +127,7 @@ void zad3() {
         }
     }
 }
+
 // 4. Napisz program, który wczytuje ze standardowego wejścia nieujemną liczbę całkowitą n i wypisuje na
 // standardowym wyjściu liczbę n!.
 void zad4(){
@@ -126,6 +139,7 @@ void zad4(){
     }
     cout << factorial << endl;
 }
+
 // 5. Napisz program, który wczytuje ze standardowego wejścia nieujemną liczbę całkowitą n i wypisuje na
 // standardowym wyjściu sumę kwadratów liczb od 0 do n, czyli wartość 02 + 12 + 32 + ... + n2.
 void zad5(){
@@ -137,6 +151,7 @@ void zad5(){
     }
     cout << sum_of_squares << endl;
 }
+
 // 6. Napisz program, który wczytuje ze standardowego 
 // wejścia liczbę całkowitą n (n > 2) i wypisuje na
 // standardowym wyjściu iloczyn liczb parzystych
@@ -157,27 +172,45 @@ void zad6(){
         cout << result << endl;
     }
 }
+
 // 7. Napisz program, który wczytuje ze standardowego wejścia dwie liczby całkowite n i m (zakładamy, że n < m)
 // i wypisuje na standardowym wyjściu liczbę n ∗ . . . ∗ m.
 void zad7(){
-    
+    dodatnie_liczby(2);
+    int min = *addresses[0];
+    int max = *addresses[1];
+    int result = 1;
+    while (max < min == true) {
+        dodatnie_liczby(2);
+    }
+    for (min; min<= max; min++) {
+        result*= min;
+    }
+    cout << result << endl;
 }
+
 // 8. Napisz program, który wczytuje ze standardowego wejścia nieujemną liczbę całkowitą n i wypisuje na
 // standardowym wyjściu element ciągu Fibonacciego o indeksie n.
 void zad8(){
-    
+    dodatnie_liczby(1);
+    int fibbonacci_index_num = *addresses[0];
+
+    cout << fibbonacci(fibbonacci_index_num) << endl;
 }
+
 // 9. Napisz program, który wczytuje ze standardowego wejścia dodatnie liczby całkowite n i m, i wypisuje na
 // standardowym wyjściu największy wspólny dzielnik tych liczb.
 void zad9(){
     
 }
+
 // 10. Napisz program, który wczytuje ze standardowego wejścia nieujemną liczbę n i wypisuje na standardowym
 // wyjściu wartość ⌊√n⌋ (wartość √n zaokrągloną w dół do najbliższej wartości całkowitoliczbowej). Program
 // napisz bez użycia funkcji z biblioteki matematycznej.
 void zad10(){
     
 }
+
 // 11. Napisz program, który wczytuje ze standardowego wejścia liczby a, b, c, d i:
 // a. wypisuje na standardowe wyjście najmniejszą nieujemną liczbę całkowitą x taką, że |a| ∗ x2 + b ∗ x + c >
 // d.
@@ -188,16 +221,19 @@ void zad10(){
 void zad11(){
     
 }
+
 // 12. Napisz program, który wczytuje ze standardowego wejścia dodatnią liczbę n i wypisuje na standardowym
 // wyjściu sumę wszystkich liczb mniejszych od n, względnie pierwszych z n.
 void zad12(){
     
 }
+
 // 13. Napisz program, który wczytuje ze standardowego wejścia nieujemną liczbę całkowitą n i wypisuje na
 // standardowym wyjściu wartość 0! + 1! + . . . + n!.
 void zad13(){
     
 }
+
 // 14. Napisz program, który wczytuje ze standardowego wejścia liczbę n i wypisuje na standardowym wyjściu
 // wszystkie trojki pitagorejskie (tj. trojki liczb całkowitych a, b, c takich, że a2 +b2 = c2), składające się z liczb
 // mniejszych od n.
@@ -205,34 +241,34 @@ void zad14(){
     
 }
 int main(){
-    // Zad 1
-    printf("Zad.1\n");
-    dodatnie_liczby(2);
-    zad1();
+    // // Zad 1
+    // printf("Zad.1\n");
+    // dodatnie_liczby(2);
+    // zad1();
 
-    // Zad 2
-    printf("\nZad.2\n");
-    zad2();
+    // // Zad 2
+    // printf("\nZad.2\n");
+    // zad2();
 
-    // Zad 3
-    printf("Zad.3\n");
-    zad3();
+    // // Zad 3
+    // printf("Zad.3\n");
+    // zad3();
     
-    // Zad 4
-    printf("Zad.4\n");
-    zad4();
+    // // Zad 4
+    // printf("Zad.4\n");
+    // zad4();
     
-    // Zad 5
-    printf("Zad.5\n");
-    zad5();
+    // // Zad 5
+    // printf("Zad.5\n");
+    // zad5();
     
-    // Zad 6
-    printf("Zad.6\n");
-    zad6();
+    // // Zad 6
+    // printf("Zad.6\n");
+    // zad6();
     
-    // Zad 7
-    printf("Zad.7\n");
-    zad7();
+    // // Zad 7
+    // printf("Zad.7\n");
+    // zad7();
     
     // Zad 8
     printf("Zad.8\n");
