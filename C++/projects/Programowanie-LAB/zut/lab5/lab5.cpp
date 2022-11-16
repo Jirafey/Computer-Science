@@ -86,7 +86,13 @@ int fibbonacci(int index_given) {
     }
     return third;
 }
-
+int factorial(int factorial_num_max) {
+    int factorial_num = 1;
+    for (int i=1; i<= factorial_num_max ;i++) {
+            factorial_num *=i ;
+        }
+    return factorial_num;
+}
 // 1. Napisz program wczytujący ze standardowego wejścia
 // dwie dodatnie liczby całkowite n i m, i wypisujący w
 // kolejnych wierszach na standardowym wyjściu wszystkie
@@ -133,11 +139,7 @@ void zad3() {
 void zad4(){
     dodatnie_liczby(1);
     int factiorial_num = *addresses[0];
-    int factorial = 1;
-    for (int i=1; i<=factiorial_num ;i++) {
-        factorial *=i ;
-    }
-    cout << factorial << endl;
+    cout << factorial(factiorial_num) << endl;
 }
 
 // 5. Napisz program, który wczytuje ze standardowego wejścia nieujemną liczbę całkowitą n i wypisuje na
@@ -201,14 +203,14 @@ void zad8(){
 // 9. Napisz program, który wczytuje ze standardowego wejścia dodatnie liczby całkowite n i m, i wypisuje na
 // standardowym wyjściu największy wspólny dzielnik tych liczb.
 void zad9(){
-    
+    dodatnie_liczby(2);
 }
 
 // 10. Napisz program, który wczytuje ze standardowego wejścia nieujemną liczbę n i wypisuje na standardowym
 // wyjściu wartość ⌊√n⌋ (wartość √n zaokrągloną w dół do najbliższej wartości całkowitoliczbowej). Program
 // napisz bez użycia funkcji z biblioteki matematycznej.
 void zad10(){
-    
+    dodatnie_liczby(1);
 }
 
 // 11. Napisz program, który wczytuje ze standardowego wejścia liczby a, b, c, d i:
@@ -219,26 +221,40 @@ void zad10(){
 // c. wypisuje na standardowe wyjście największą nieujemną liczbę całkowitą x taką, że 5∗x2+a∗x+b ≤ c.
 // Zakładamy, że taka nieujemna całkowita liczba x istnieje.
 void zad11(){
-    
+    int a,b,c,d;
+    cin >> a;
+    cin >> b;
+    cin >> c;
+    cin >> d;
 }
 
 // 12. Napisz program, który wczytuje ze standardowego wejścia dodatnią liczbę n i wypisuje na standardowym
 // wyjściu sumę wszystkich liczb mniejszych od n, względnie pierwszych z n.
 void zad12(){
-    
+    dodatnie_liczby(1);
 }
 
 // 13. Napisz program, który wczytuje ze standardowego wejścia nieujemną liczbę całkowitą n i wypisuje na
 // standardowym wyjściu wartość 0! + 1! + . . . + n!.
 void zad13(){
-    
+    dodatnie_liczby(1);
+    int factorial_max = *addresses[0];
+    int factorial_result = 0;
+    for (int i=0; i<=factorial_max; i++) {
+        factorial_result += factorial(i);
+    }
+    cout << factorial_result << endl;
 }
 
 // 14. Napisz program, który wczytuje ze standardowego wejścia liczbę n i wypisuje na standardowym wyjściu
 // wszystkie trojki pitagorejskie (tj. trojki liczb całkowitych a, b, c takich, że a2 +b2 = c2), składające się z liczb
 // mniejszych od n.
 void zad14(){
-    
+    int n;
+    cin >> n;
+    // for () {
+
+    // }
 }
 int main(){
     // // Zad 1
