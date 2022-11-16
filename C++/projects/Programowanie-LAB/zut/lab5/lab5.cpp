@@ -5,75 +5,157 @@ using namespace std;
 
 // PĘTLE
 
-// 1. Napisz program wczytujący ze standardowego wejścia dwie dodatnie liczby całkowite n i m, i wypisujący w
-// kolejnych wierszach na standardowym wyjściu wszystkie dodatnie wielokrotności n mniejsze od m.
-int n, m;
-int * addresses[2] = {&n,&m};
 
-int * zad1(){
-    
-    
-    
+int num1, num2, num3;
+int * addresses[3] = {&num1,&num2, &num3};
 
-    while (true) {
-    cout << "Enter 2 positive integers" << endl;
-    cin >> n;
-    if (n < 0) continue;
-    cin >> m;
-    if (m < 0) continue;
-    break; 
+int * dodatnie_liczby(int var_num) {
+    if (var_num == 3) {
+        while (true) {
+            cout << "Enter 3 positive integers" << endl;
+            cin >> num1;
+            if (num1 < 0) {
+                continue;
+            }
+            else {
+                cin >> num2;
+            }    
+            if (num2 < 0) { 
+                continue;
+            }
+            else {
+                cin >> num3;
+            }
+            if (num3 < 0) {
+                continue;
+            }
+            else {
+                break;
+            }
+        }
+        printf("\n");
+        return  addresses[3];
     }
-    return  addresses[2];
+    
+    if (var_num == 2) {
+        while (true) {
+            cout << "Enter 2 positive integers" << endl;
+            cin >> num1;
+            if (num1 < 0) {
+                continue;
+            }
+            else {
+                cin >> num2;
+            }
+
+            if (num2 < 0) {
+                continue;
+            }
+            else {
+                break;
+            }
+        }
+        printf("\n");
+        return  addresses[2];
+    }
+    if (var_num == 1) {
+        while (true) {
+            cout << "Enter 1 positive integer" << endl;
+            cin >> num1;
+            if (num1 < 0) {
+                continue;
+            }
+            else {
+                break;
+            }
+        }
+        printf("\n");
+        return  addresses[1];
+    }
 }
-int zad1_2()
-    {
-    int n, m;
-    for (n;n<m;n++){
-        if (m%n == 0){
-
-            cout << n<< endl;
-        }
-        }
-
+// 1. Napisz program wczytujący ze standardowego wejścia
+// dwie dodatnie liczby całkowite n i m, i wypisujący w
+// kolejnych wierszach na standardowym wyjściu wszystkie
+// dodatnie wielokrotności n mniejsze od m.
+void zad1() {
+    int multiplied_num= *addresses[0];
+    int max = *addresses[1];
+    for (int i = 1;multiplied_num*i<max;i++) {
+        cout << multiplied_num*i<< endl;
     }
+}
 
-// 2. Napisz program wczytujący ze standardowego wejścia dwie dodatnie liczby całkowite n i m, i wypisujący na
+// 2. Napisz program wczytujący ze standardowego wejścia dwie dodatnie
+// liczby całkowite n i m, i wypisujący na
 // standardowym wyjściu m pierwszych wielokrotności liczby n.
-void zad2(){
-    zad1();
+void zad2() {
+    dodatnie_liczby(2);
+    int multiplied_num= *addresses[0];
+    int number_of_multiples = *addresses[1];
 
-    printf("%d\n", *addresses[0]);
-    cout << (*addresses[1]) << endl;
-    // cout << (zad1()[0],zad1()[1]) <<endl;
-    for (*addresses[0];*addresses[1]<*addresses[0];*addresses[1]++){
-        // 24 n
-        // 3 m
-        if (*addresses[0]%*addresses[1] == 0){
-            cout << *addresses[0] << endl;
+    printf("\n");
+        for (int i = 1; i <= number_of_multiples; i++) {
+            cout << multiplied_num*i << endl;
         }
-    }
 }
+
+
 // 3. Napisz program wczytujący ze standardowego wejścia trzy dodatnie liczby całkowite n, m i k, i wypisujący w
 // kolejnych wierszach wszystkie wielokrotności n większe od m i mniejsze od k.
 
-void zad3(){
-    
+void zad3() {
+    dodatnie_liczby(3);
+    int n = *addresses[0];
+    int min = *addresses[1];
+    int max = *addresses[2];
+
+    for (int i=1; n*i< max; i++) {
+        if (n*i > min && n*i < max) {
+            cout << n*i << endl;
+        }
+    }
 }
 // 4. Napisz program, który wczytuje ze standardowego wejścia nieujemną liczbę całkowitą n i wypisuje na
 // standardowym wyjściu liczbę n!.
 void zad4(){
-    
+    dodatnie_liczby(1);
+    int factiorial_num = *addresses[0];
+    int factorial = 1;
+    for (int i=1; i<=factiorial_num ;i++) {
+        factorial *=i ;
+    }
+    cout << factorial << endl;
 }
 // 5. Napisz program, który wczytuje ze standardowego wejścia nieujemną liczbę całkowitą n i wypisuje na
 // standardowym wyjściu sumę kwadratów liczb od 0 do n, czyli wartość 02 + 12 + 32 + ... + n2.
 void zad5(){
-    
+    dodatnie_liczby(1);
+    int number_of_squares= *addresses[0];
+    int sum_of_squares = 0;
+    for (int i=1; i<=number_of_squares ;i++) {
+        sum_of_squares+= i*i;
+    }
+    cout << sum_of_squares << endl;
 }
-// 6. Napisz program, który wczytuje ze standardowego wejścia liczbę całkowitą n (n > 2) i wypisuje na
-// standardowym wyjściu iloczyn liczb parzystych z zakresu od 2 do n (czyli 2 ∗ 4 ∗ . . . ∗ n dla n parzystych i 2 ∗
+// 6. Napisz program, który wczytuje ze standardowego 
+// wejścia liczbę całkowitą n (n > 2) i wypisuje na
+// standardowym wyjściu iloczyn liczb parzystych
+// z zakresu od 2 do n (czyli 2 ∗ 4 ∗ . . . ∗ n dla n parzystych i 2 ∗
 // 4 ∗ . . . ∗ (n − 1) w przeciwnym wypadku).
 void zad6(){
-    
+    dodatnie_liczby(1);
+    int max = *addresses[0];
+    int result = 2;
+    for (int i=2; i<=max; i=i+2) {
+        result *= i; 
+    }
+    if (max % 2 == 1) {
+        result*= max;
+        cout << result << endl;
+    }
+    else {
+        cout << result << endl;
+    }
 }
 // 7. Napisz program, który wczytuje ze standardowego wejścia dwie liczby całkowite n i m (zakładamy, że n < m)
 // i wypisuje na standardowym wyjściu liczbę n ∗ . . . ∗ m.
@@ -123,34 +205,61 @@ void zad14(){
     
 }
 int main(){
-    // zad1();
-    // printf("Zad.1\n");
-    
-    printf("Zad.2\n");
+    // Zad 1
+    printf("Zad.1\n");
+    dodatnie_liczby(2);
+    zad1();
+
+    // Zad 2
+    printf("\nZad.2\n");
     zad2();
 
+    // Zad 3
+    printf("Zad.3\n");
     zad3();
     
+    // Zad 4
+    printf("Zad.4\n");
     zad4();
     
+    // Zad 5
+    printf("Zad.5\n");
     zad5();
     
+    // Zad 6
+    printf("Zad.6\n");
     zad6();
     
+    // Zad 7
+    printf("Zad.7\n");
     zad7();
     
+    // Zad 8
+    printf("Zad.8\n");
     zad8();
     
+    // Zad 9
+    printf("Zad.9\n");
     zad9();
     
+    // Zad 10
+    printf("Zad.10\n");
     zad10();
     
+    // Zad 11
+    printf("Zad.11\n");
     zad11();
     
+    // Zad 12
+    printf("Zad.12\n");
     zad12();
     
+    // Zad 13
+    printf("Zad.13\n");
     zad13();
     
+    // Zad 14
+    printf("Zad.14\n");
     zad14();
 }
 
