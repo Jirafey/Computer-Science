@@ -1,1 +1,4 @@
-/Programming
+.vscode/
+*.zip
+*.json
+*.bak
