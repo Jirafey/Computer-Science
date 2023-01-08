@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"name": "lab1",
+		"path": "."
+	},
+	{
+		"name": "e-shop-itcs",
+		"path": "../../../../../../../OneDrive/Documents/GitHub/e-shop-itcs"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "lab1",
+    "liveServer.settings.port": 5501
+  }
+}
