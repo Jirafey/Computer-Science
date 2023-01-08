@@ -49,7 +49,6 @@ int **fill_in_matrix(int rows, int columns) {
             matrix[i][j] = rand() % 101;
         }
     }
-
     return matrix;
 }
 
