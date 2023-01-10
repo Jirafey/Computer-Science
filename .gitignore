@@ -2,6 +2,7 @@
 *.zip
 *.json
 *.bak
+*.code-workspace
 
 # Prerequisites
 *.d
